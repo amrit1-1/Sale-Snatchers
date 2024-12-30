@@ -1,0 +1,301 @@
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+  
+.title-card {
+    text-align: center;
+    padding: 50px;
+}
+
+.mute {
+    width: 50px;
+    position: fixed;
+    left: 0;
+    top: 15%;
+    margin: 5px;
+    transition: 0.5s ease;
+}
+
+.mute:hover {
+    width: 60px;
+    transition: 0.5s ease;
+}
+  
+.hidden {
+    display: none;
+}
+
+#game-over {
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+  
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+  
+#score {
+    left: 20px;
+    position: absolute;
+    top: 10px;
+    font-size: 30px;
+    background-color: rgb(218, 0, 0);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 0px 0px 50px 5px black;
+}
+
+#timer {
+    right: 20px;
+    position: absolute;
+    top: 10px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 0px 0px 50px 5px black;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+  
+#trolley {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 100px;
+    background-image: url('images/cart.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+.falling-object {
+    width: 100px;
+    height: 100px;
+}
+  
+.falling-object img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.popup {
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+  z-index: 1000;
+}
+
+.popup-value {
+  background-color: white;
+  color: green;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+
+.popup-value {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  transition: 0.5s ease;
+}
+
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+  
+@keyframes fall {
+    to {
+      transform: translateY(100vh);
+    }
+}
+  
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.9;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+  
+.confetti.white {
+    background-color: white;
+}
+
+.banner {
+    background-color: rgb(218, 0, 0);
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    z-index: 1000;
+}
+
+.logo {
+    height: 300px;
+}
+
+.description {
+    background-color: rgb(218, 0, 0);
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    margin: 20px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 50px 5px black;
+}
+
+.instructions-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.arrows {
+    height: 100px;
+}
+
+.instructions {
+    flex: 1;
+    color: rgb(218, 0, 0);
+    background-color: white;
+    border-width: 5px;
+    border-radius: 30px;
+    border: solid rgb(218, 0, 0) 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.blank-objects {
+    height: 80px;
+}
+
+.object-instructions {
+    flex: 1;
+    color: rgb(218, 0, 0);
+    background-color: white;
+    border-width: 5px;
+    border-radius: 30px;
+    border: solid rgb(218, 0, 0) 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.start-button {
+    font-size: 30px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(0, 192, 0);
+    margin: 20px;
+    transition: 0.5s ease;
+}
+
+.start-button:hover {
+    background-color: rgb(0, 149, 0);
+    transition: 0.5s ease;
+}
+
+.end-message {
+    background-color: rgb(218, 0, 0);
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    margin: 20px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 50px 5px black;
+}
+
+.playagain {
+    font-size: 30px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+    color: rgb(218, 0, 0);
+    font-weight: bold;
+    background-color: white;
+    margin: 20px;
+    transition: 0.5s ease;
+}
+
+.playagain:hover {
+    color: black;
+    transition: 0.5s ease;
+}
+
+.quit-button {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .quit-button:hover {
+    color: #e60000;
+  }

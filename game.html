@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sale Snatchers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="confetti"></div>
+  <audio id="background-music" src="sounds/background-music.mp3" loop autoplay preload="auto"></audio>
+  <!-- Title page -->
+  <div id="title-card" class="title-card">
+    <div class="banner">
+      <p>DISCLAIMER: This is entirely fictional. The sale items are not real. This is a game intended for entertainment.</p>
+    </div>
+
+    <img src="images/logo.png" class="logo">
+
+    <div id="mute-container">
+      <button id="mute-button-title" class="mute-button">
+        <img src="images/unmuted.png" class="mute">
+      </button>
+    </div>
+
+    <div class="description">
+      <p>**ATTENTION SHOPPERS**</p>
+      <p>For the next 60 seconds, ALL ITEMS ARE 50% OFF! Move fast so you can snatch those sales!</p>
+    </div>
+
+    <div class="instructions-container">
+      <div class="instructions">
+        <img src="images/arrows.png" class="arrows">
+        <p>Use the left/right arrow keys on your keyboard to move the trolley and catch the falling sale items. The amount you've saved will be shown at the end.</p>
+        <p>You have 60 seconds. Can you snatch them all?</p>
+      </div>
+  
+      <div class="object-instructions">
+        <img src="images/more-time-blank.png" class="blank-objects">
+        <img src="images/lawsuit-blank.png" class="blank-objects">
+        <img src="images/less-time-blank.png" class="blank-objects">
+        <p>Watch out for these special items! We don't have any permits for our store yet so please AVOID the lawsuit! The game will end if you catch it. There also may be certain items that adjust the sale's time too...</p>
+      </div>
+    </div>
+
+    <button id="start-button" class="start-button">START</button>
+  </div>
+
+  <!-- Game content (this will be shown once START is pressed) -->
+  <div id="game-container" class="game-container hidden">
+    <div id="score">Savings: 0</div>
+    <div id="timer">Time: 60</div>
+    <div id="trolley"></div>
+    <button id="quit-button" class="quit-button">QUIT</button>
+  </div>
+
+  <div id="mute-container">
+    <button id="mute-button-game" class="mute-button">
+      <img src="images/unmuted.png" class="mute">
+    </button>
+  </div>
+
+<!-- Game Over content (this will be shown after the game ends) -->
+<div id="game-over" class="hidden">
+  <div class="end-message">
+    <h1>SALES OVER</h1>
+    <p id="game-over-message"></p>
+    <p id="score-message"></p>
+    <button class="playagain" onclick="restartGame()">PLAY AGAIN</button>
+  </div>
+  
+  <div id="mute-container">
+    <button id="mute-button-game-over" class="mute-button">
+      <img src="images/unmuted.png" class="mute">
+    </button>
+  </div>
+</div>
+
+  <!-- Link to external JS files -->
+  <script src="js/mute.js" defer></script>
+  <script src="js/confetti.js" defer></script>
+  <script src="js/trolley.js" defer></script>
+  <script src="js/score.js" defer></script>
+  <script src="js/fallingObjects.js" defer></script>
+  <script src="js/gameOver.js" defer></script>
+  <script src="js/game.js" defer></script>
+</body>
+</html>
